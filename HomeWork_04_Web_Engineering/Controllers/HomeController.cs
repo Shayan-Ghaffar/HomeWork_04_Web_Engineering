@@ -8,7 +8,7 @@ namespace HomeWork_04_Web_Engineering.Controllers
     {
         public IActionResult Index()
         {
-            return RedirectToAction("Index", "Cars");
+            return View();
         }
     }
 }
