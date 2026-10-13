@@ -1,0 +1,47 @@
+﻿@model List<Car>
+
+<div class="container my-4">
+    <div class="row align-items-center mb-4">
+        <div class="col">
+            <h2 class="mb-0">Booked Cars</h2>
+        </div>
+        <div class="col text-end">
+            <a asp-controller="Cars" asp-action="Index" class="btn btn-secondary">Back To Cars</a>
+        </div>
+    </div>
+    @if (Model.Count == 0)
+    {
+        <div class="alert alert-info text-center py-4 my-3" role="alert">
+            <h4 class="alert-heading fw-bold">No Cars Available!</h4>
+            <p>No cars have been booked. Check back later or Book a Car.</p>
+        </div>
+    }
+    else
+    {
+        <div class="table-responsive my-3">
+            <table class="table table-dark table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Car Name</th>
+                        <th>Price Per Day</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (Car car in @Model)
+                    {
+                        <tr>
+                            <td>@car.Id</td>
+                            <td>@car.Name</td>
+                            <td>@car.PricePerDay</td>
+                            <td>
+                                <span class="badge bg-warning text-dark">Booked</span>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>
