@@ -22,11 +22,11 @@
                     <div class="card h-100 shadow-sm text-center">
                         <div class="card-body flex-column">
                             <h5>@car.Name</h5>
-                            <h5>@car.PricePerDay</h5>
+                            <h5>PKR @car.PricePerDay Per Day</h5>
                             <span class="badge bg-success">Available</span>
                             <form asp-controller="Cars" asp-action="Book" method="post">
                                 <input type="hidden" name="id" value="@car.Id"/>
-                                <button class="badge bg-black">Book Car</button>
+                                <button class="badge bg-primary w-100">Book Car</button>
                             </form>
                         </div>
                     </div>
